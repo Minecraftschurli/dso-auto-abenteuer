@@ -8,8 +8,8 @@ def click():
     mouse = MouseController()
     pos = None
 
-    def set_xy():
-        pos = mouse.position
+    def set_xy(x, y, button, pressed):
+        pos = (x, y)
         mouse_listener.stop()
     mouse_listener = MouseListener(on_click=set_xy)
     mouse_listener.start()
