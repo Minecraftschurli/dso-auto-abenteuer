@@ -1,6 +1,21 @@
 import cv2
 import numpy
 from PIL import ImageChops, ImageGrab  # $ pip install pillow
+from pynput.mouse import Controller as MouseController, Listener as MouseListener
+
+
+def click():
+    mouse = MouseController()
+    pos = None
+
+    def set_xy():
+        pos = mouse.position
+        mouse_listener.stop()
+    mouse_listener = MouseListener(on_click=set_xy)
+    mouse_listener.start()
+    while mouse_listener.running:
+        pass
+    return pos
 
 
 def setup():
