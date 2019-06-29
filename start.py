@@ -24,7 +24,10 @@ def click(_id=''):
 
 def setup():
     global notif_bbox
-    notif_bbox = click('1') + click('2')
+    pos1 = click('1')
+    sleep(1)
+    pos2 = click('2')
+    notif_bbox = pos1 + pos2
 
 
 if __name__ == '__main__':
